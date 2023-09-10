@@ -1,5 +1,4 @@
 import express, { response } from 'express';
-import path from 'path';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
 import {WebSocketServer} from 'ws';
@@ -29,7 +28,7 @@ app.use(cors());
 app.use(bodyParser.json());
 const port =  process.env.PORT || 80;
 
-app.use(express.static(path.join(path.dirname(fileURLToPath(import.meta.url)),'webapp', 'dist')));
+app.use(express.static('webapp/dist'));
 
 let server = http.createServer(app);
 //start server
