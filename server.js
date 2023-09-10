@@ -64,4 +64,4 @@ wss.on('connection', (ws) => {
       clients.splice(clients.indexOf(ws),1);
     });
 });
-export {app};
+export default {app, wss};
