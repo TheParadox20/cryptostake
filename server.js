@@ -32,7 +32,7 @@ app.use(express.static('webapp/dist'));
 
 let server = http.createServer(app);
 //start server
-server.listen(port,()=>{
+export default server.listen(port,()=>{
     console.log('Server started at http://localhost:' + port);
 });
 app.get('/test',(req,res)=>{
@@ -63,4 +63,3 @@ wss.on('connection', (ws) => {
       clients.splice(clients.indexOf(ws),1);
     });
 });
-export default server;
