@@ -1,11 +1,14 @@
 import { useContext } from "react"
 import { Context } from "./ContextProvider.jsx"
+import Landing from "./components/Landing.jsx"
+import Dashboard from "./components/Dashboard.jsx"
 
 export default function App(){
   let {Wallet} = useContext(Context)
+  let [wallet,setWallet] = Wallet
   return(
-    <div className="bg-slate-900 h-screen">
-      <h1 className="text-purple-600 font-bold text-lg">CryptoStake</h1>
+    <div className="">
+      {wallet ? <Dashboard/> : <Landing/>}
     </div>
   )
 }
